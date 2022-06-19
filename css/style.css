@@ -61,15 +61,158 @@ body {
 
 .page-title-logo .score {
   margin-top: 80px;
-  text-align: left;
   margin-left: auto;
   margin-right: auto;
+  padding: 1em;
 }
 
 .page-title-logo .score .score-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.page-title-logo .score .score-icon .icon-circle {
   height: 48px;
   width: 48px;
   background-color: white;
   border-radius: 50%;
+  position: relative;
+}
+
+.page-title-logo .score .score-icon .icon-circle img {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 10px;
+  left: 10px;
+}
+
+.page-title-logo .score .score-icon .score-marks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.page-title-logo .score .score-icon .score-marks span {
+  margin-left: 1em;
+}
+
+.page-title-logo .score .highscore-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.page-title-logo .score .highscore-icon .icon-circle2 {
+  height: 48px;
+  width: 48px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.page-title-logo .score .highscore-icon .icon-circle2 img {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 10px;
+  left: 10px;
+}
+
+.page-title-logo .score .highscore-icon .highscore-marks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.page-title-logo .score .highscore-icon .highscore-marks span {
+  margin-left: 1em;
+}
+
+.main-area {
+  text-align: center;
+}
+
+.main-area .guess-meter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-area .guess-meter .icon-circle3 {
+  height: 48px;
+  width: 48px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.main-area .guess-meter .icon-circle3 img {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 10px;
+  left: 10px;
+}
+
+.main-area .guess-meter .guess-meter-value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.main-area .guess-meter .guess-meter-value span {
+  margin-left: 1em;
+}
+
+.main-area .inputs {
+  text-align: center;
+}
+
+.main-area .inputs label {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.main-area .inputs input {
+  width: 250px;
+  height: 50px;
+  border: gray solid 1px;
+  border-radius: .5em;
+  font-size: 24px;
+  padding: .5em;
+}
+
+.main-area .inputs button {
+  display: block;
+  margin: 1em auto;
+  width: 217px;
+  height: 50px;
+  border-radius: 25px;
+  background: #EB8F00;
+  border: none;
+  font-size: 24px;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

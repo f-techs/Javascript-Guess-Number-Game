@@ -19,17 +19,33 @@
             <div class="hr"></div>
             <div class="circle-icon"> <img src="images/noto_thinking-face.svg" /> </div>
             <div class="score">
-                <div class="score-icon"><img src="images/arcticons_score-sheets.svg"/>SCORE: <span id="score">20</span></div> 
-                <div class="highscore-icon"><img src="images/arcticons_score-sheets.svg"/></div> HIGH SCORE: <span id="high-score">20</span>
+                <div class="score-icon">
+                    <div class="icon-circle">
+                        <img src="images/arcticons_score-sheets.svg"/>
+                    </div>
+                    <div class="score-marks">SCORE: <span id="marks-score">20</span></div> 
+                </div> 
+                <div class="highscore-icon">
+                    <div class="icon-circle2">
+                        <img src="images/healthicons_high-bars.svg"/>
+                    </div>
+                    <div class="highscore-marks"> HIGH SCORE: <span id="high-score">20</span></div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="section">
-        <div class="guess-meter"></div> SCORE: <span id="guess-meter">20</span>
+    <div class="section main-area">
+        <div class="guess-meter">
+            <div class="icon-circle3">
+                <img src="images/healthicons_high-level.svg"/>
+            </div>
+            <div class="guess-meter-value">GUESS METER: <span id="guess-meter">20</span></div>
+        </div> 
+        
         <div class="inputs">
             <label for="input-number">Enter Number</label>
             <input type="text" id="input-number" name="input-number">
-            <button>CHECK</button>
+            <button type="submit">CHECK</button>
         </div>
     </div>
 </body>
