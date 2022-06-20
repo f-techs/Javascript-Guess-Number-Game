@@ -58,16 +58,35 @@ body{
                 top:12px;
                 left:12px;
             }
+            h1{
+                color:green;
+                position:absolute;
+                top:-18px;
+                left:20px;
+                font-size: 48px;
+            }
         }
     }
    .score{
-    margin-top:80px;
-    //text-align: left;
+    margin-top:40px;
+   // text-align: left;
     margin-left: auto;
     margin-right: auto;
     padding: 1em;
 
- 
+ .reset-button{
+    text-align: center;
+    margin:10px 10px;
+    button{
+        width: 217px;
+        height: 50px;
+        border-radius: 25px;
+        background: gray;
+        border: none;
+        font-size: 24px;
+        color:white
+    }
+ }
     .score-icon{
         display: flex;
         justify-content: center;
@@ -89,9 +108,7 @@ body{
             display:flex;
             padding-left: 10px;
             margin-top:10px;
-            span{
-                margin-left:1em;
-            }
+          
         }
     }
     .highscore-icon{
@@ -117,9 +134,7 @@ body{
             display:flex;
             padding-left: 10px;
             margin-top:10px;
-            span{
-                margin-left:1em;
-            }
+       
         }
     }
    }
@@ -152,12 +167,11 @@ body{
         display:flex;
         padding-left: 10px;
         margin-top:10px;
-        span{
-            margin-left:1em;
-        }
+      
     }
     }
     .inputs{
+        margin-top:10px;
         text-align: center;
         label{
             display: block;
@@ -171,6 +185,7 @@ body{
             border-radius: .5em;
             font-size: 24px;
             padding:.5em;
+            text-align: center;
         }
         button{
             display: block;
@@ -186,3 +201,9 @@ body{
     }
 }
 
+span{
+    margin-left:1em;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: -2px;
+}

@@ -7,6 +7,11 @@
     <title>Guessing Game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+<style>
+    .error{
+        color:red;
+    }
+</style>
 <body>
     <div class="page-title">
         <div class="container">
@@ -17,19 +22,25 @@
     <div class="section page-title-logo">
         <div class="container">
             <div class="hr"></div>
-            <div class="circle-icon"> <img src="images/noto_thinking-face.svg" /> </div>
+            <div class="circle-icon">
+                <img class="thinker-image" src="images/noto_thinking-face.svg" /> 
+                 <h1 id="guessed-number">20</h1>          
+            </div>
             <div class="score">
+                <div class="reset-button">
+                    <button class="retry-button">Try Again</button>
+                </div>
                 <div class="score-icon">
                     <div class="icon-circle">
                         <img src="images/arcticons_score-sheets.svg"/>
                     </div>
-                    <div class="score-marks">SCORE: <span id="marks-score">20</span></div> 
+                    <div class="score-marks">SCORE: <span id="marks-score"></span></div> 
                 </div> 
                 <div class="highscore-icon">
                     <div class="icon-circle2">
                         <img src="images/healthicons_high-bars.svg"/>
                     </div>
-                    <div class="highscore-marks"> HIGH SCORE: <span id="high-score">20</span></div>
+                    <div class="highscore-marks"> HIGH SCORE: <span id="high-score"></span></div>
                 </div>
             </div>
         </div>
@@ -39,17 +50,182 @@
             <div class="icon-circle3">
                 <img src="images/healthicons_high-level.svg"/>
             </div>
-            <div class="guess-meter-value">GUESS METER: <span id="guess-meter">20</span></div>
+            <div class="guess-meter-value">GUESS METER MESSAGE: <span id="guess-meter"></span></div>
         </div> 
         
         <div class="inputs">
             <label for="input-number">Enter Number</label>
-            <input type="text" id="input-number" name="input-number">
-            <button type="submit">CHECK</button>
+            <input type="number" id="input-number" name="input-number">
+            <button id="btnCheck" type="submit">CHECK</button>
         </div>
     </div>
 </body>
 </html>
 <script>
+    //declare variables
+  let score = 20;
+  const marksScore = document.getElementById("marks-score");
+  const highScore=document.getElementById("high-score");
+  const guessCaption=document.getElementById("guess-meter");
+  const inputValue=document.getElementById("input-number");
+  let randomNumber = Math.floor((Math.random() * 100) + 1);
+  const btnCheck=document.getElementById("btnCheck");
+  const labelCaption=document.querySelector("label");
+  const body=document.querySelector('body');
+  const circleIcon=document.querySelector('.circle-icon');
+  const thinkImage=document.querySelector('.thinker-image');
+  const showRandomNumber=document.getElementById('guessed-number');
+  const retryButton=document.querySelector('.retry-button');
+  const bodyColors = ['brown', 'red', 'blue', 'black', 'peru', 'pink', 'purple', 'palegreen', 'gray']
+  const obtainedMarks=[];
+
+  //set score
+  marksScore.textContent=score;
+  console.log(randomNumber);
+  //display random number to show when guess is right but do not display
+  if(randomNumber.toString().length === 1){
+    showRandomNumber.textContent=`0${randomNumber}`;
+  }else{
+    showRandomNumber.textContent=randomNumber;
+  }
+
+  //hide correct random number and retry button
+  showRandomNumber.style.display='none';
+  retryButton.style.display='none';
+
+
+  //function for game logic
+  function guessNumber(){
+    //check if a number is entered
+    if(!inputValue.value){
+        //message to display when number is not entered
+        labelCaption.textContent=`The Input Can't be empty`;
+
+        //change text color for user to notice fast
+        labelCaption.style.color='red';
+        //check if input is a number 
+    }else if(!Number(inputValue.value)){
+        //message to display if input is not a number
+        labelCaption.textContent=`Enter only a number`;
+
+        //change text color
+        labelCaption.style.color='red';
+
+        //check if input number is within range
+    }else if(Number(inputValue.value) > 100 || Number(inputValue.value) < 0){
+        //message to display if input number is not within range
+        labelCaption.textContent=`You input is out of range`;
+
+        //change text color for quick notice
+        labelCaption.style.color='red';
+    }else{
+
+        //after checking if everything is alright reset caption back
+        labelCaption.textContent = "Enter Number";
+        labelCaption.style.color='white';
+
+        //check for correct guess of number
+        if(randomNumber === Number(inputValue.value)){
+
+            //message to display if guess is correct
+            guessCaption.textContent=`Hurray! U guessed right`;
+
+            //change background color to draw user attention
+            body.style.backgroundColor='green'
+
+            
+            //highScore.textContent=score;
+
+            //remove thinking emoji
+            thinkImage.style.display='none';
+
+            //show the random number
+            showRandomNumber.style.display='block';
+
+            //show try again button
+            retryButton.style.display="inline-block";
+
+            //get and check obtained marks
+
+
+            //logic to show how close or far input number is from the random number
+        }else if(randomNumber > Number(inputValue.value)){
+
+            //check if all chances is exhausted
+            if(score < 1){
+
+                //display message if chance is exhausted
+                guessCaption.textContent=`You loss the game`;   
+
+                //reset score to 0
+                score=0;
+
+                //show try again button
+                retryButton.style.display="block";
+            }else{
+
+                //message to show if guess is low
+            guessCaption.textContent=`Your guess is low`;
+
+            //decrease marks or score 
+            score--;
+
+            //display score
+            marksScore.textContent =score;
+
+            //randomly change background color if guess is wrong
+            body.style.backgroundColor=bodyColors[Math.trunc(Math.random() * bodyColors.length)];
+            }
+            //check if randomNumber is more than input value
+        }else if(randomNumber < Number(inputValue.value)){
+
+            //display message if chance is exhausted
+            if(score < 1){
+                //display message if all chances are exhausted
+                guessCaption.textContent=`You loss the game`;  
+                
+                //reset score to 0
+                score=0;
+
+                //show try again button
+                retryButton.style.display="block";
+            }else{
+                //show messaeg if guess is high
+            guessCaption.textContent=`Your guess is high`;
+
+            //decrease score by one
+            score--;
+
+            //show score
+            marksScore.textContent=score;
+
+            //randomly change background color
+            body.style.backgroundColor=bodyColors[Math.trunc(Math.random() * bodyColors.length)];
+            }
+            
+        }
+    }
   
+  }
+
+  function tryAgain(){
+    //reset all necessary variables
+   randomNumber = Math.floor((Math.random() * 100) + 1);
+   showRandomNumber.style.display='none';
+   thinkImage.style.display='block';
+   score=0;
+   guessCaption.textContent='';
+  }
+ 
+  btnCheck.addEventListener('click', ()=>{
+    //call guessNumber function when click
+    guessNumber();
+  })
+  
+  retryButton.addEventListener('click', ()=>{
+
+    //call tryAgain function when button click
+    tryAgain();
+  })
+
 </script>

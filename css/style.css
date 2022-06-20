@@ -59,11 +59,34 @@ body {
   left: 12px;
 }
 
+.page-title-logo .container .circle-icon h1 {
+  color: green;
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  font-size: 48px;
+}
+
 .page-title-logo .score {
-  margin-top: 80px;
+  margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
+}
+
+.page-title-logo .score .reset-button {
+  text-align: center;
+  margin: 10px 10px;
+}
+
+.page-title-logo .score .reset-button button {
+  width: 217px;
+  height: 50px;
+  border-radius: 25px;
+  background: gray;
+  border: none;
+  font-size: 24px;
+  color: white;
 }
 
 .page-title-logo .score .score-icon {
@@ -99,10 +122,6 @@ body {
   margin-top: 10px;
 }
 
-.page-title-logo .score .score-icon .score-marks span {
-  margin-left: 1em;
-}
-
 .page-title-logo .score .highscore-icon {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,10 +155,6 @@ body {
   display: flex;
   padding-left: 10px;
   margin-top: 10px;
-}
-
-.page-title-logo .score .highscore-icon .highscore-marks span {
-  margin-left: 1em;
 }
 
 .main-area {
@@ -181,11 +196,8 @@ body {
   margin-top: 10px;
 }
 
-.main-area .guess-meter .guess-meter-value span {
-  margin-left: 1em;
-}
-
 .main-area .inputs {
+  margin-top: 10px;
   text-align: center;
 }
 
@@ -202,6 +214,7 @@ body {
   border-radius: .5em;
   font-size: 24px;
   padding: .5em;
+  text-align: center;
 }
 
 .main-area .inputs button {
@@ -214,5 +227,12 @@ body {
   border: none;
   font-size: 24px;
   color: white;
+}
+
+span {
+  margin-left: 1em;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: -2px;
 }
 /*# sourceMappingURL=style.css.map */
