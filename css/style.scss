@@ -96,12 +96,14 @@ body{
             background-color: white;
             border-radius: 50%;
             position: relative;
-            img{
+            i{
                position:absolute;
                 height:30px;
                 width:30px;
                 top:10px;
-                left:10px;
+                left:12px;
+               // color:var(--primary-color);
+                font-size: 30px;
             }
         }
         .score-marks{
@@ -122,12 +124,14 @@ body{
             background-color: white;
             border-radius: 50%;
             position: relative;
-            img{
+            i{
                position:absolute;
                 height:30px;
                 width:30px;
                 top:10px;
                 left:10px;
+               // color:var(--primary-color);
+                font-size: 25px;
             }
         }
         .highscore-marks{
@@ -155,12 +159,14 @@ body{
         background-color: white;
         border-radius: 50%;
         position: relative;
-        img{
+        i{
            position:absolute;
             height:30px;
             width:30px;
             top:10px;
             left:10px;
+           // color:var(--primary-color);
+            font-size: 30px;
         }
     }
        .guess-meter-value{
@@ -199,6 +205,10 @@ body{
             color:white
         }
     }
+}
+
+i{
+    color:var(--primary-color);
 }
 
 span{

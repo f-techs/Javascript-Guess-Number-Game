@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guessing Game</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<style>
-    .error{
-        color:red;
-    }
-</style>
 <body>
     <div class="page-title">
         <div class="container">
@@ -32,13 +28,14 @@
                 </div>
                 <div class="score-icon">
                     <div class="icon-circle">
-                        <img src="images/arcticons_score-sheets.svg"/>
+                        <!-- <img src="images/arcticons_score-sheets.svg"/> -->
+                        <i class="fas fa-clipboard-list icons"></i>
                     </div>
                     <div class="score-marks">SCORE: <span id="marks-score"></span></div> 
                 </div> 
                 <div class="highscore-icon">
                     <div class="icon-circle2">
-                        <img src="images/healthicons_high-bars.svg"/>
+                        <i class="fas fa-signal icons"></i>
                     </div>
                     <div class="highscore-marks"> HIGH SCORE: <span id="high-score"></span></div>
                 </div>
@@ -48,9 +45,9 @@
     <div class="section main-area">
         <div class="guess-meter">
             <div class="icon-circle3">
-                <img src="images/healthicons_high-level.svg"/>
+                <i class="fas fa-tachometer-alt icons"></i>
             </div>
-            <div class="guess-meter-value">GUESS METER MESSAGE: <span id="guess-meter"></span></div>
+            <div class="guess-meter-value">GUESS GAUGE: <span id="guess-meter"></span></div>
         </div> 
         
         <div class="inputs">

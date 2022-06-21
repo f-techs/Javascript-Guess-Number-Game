@@ -1,10 +1,10 @@
   //declare variables
   let score = 20;
+  let randomNumber = Math.floor((Math.random() * 100) + 1);
   const marksScore = document.getElementById("marks-score");
   const highScore=document.getElementById("high-score");
   const guessCaption=document.getElementById("guess-meter");
   const inputValue=document.getElementById("input-number");
-  let randomNumber = Math.floor((Math.random() * 100) + 1);
   const btnCheck=document.getElementById("btnCheck");
   const labelCaption=document.querySelector("label");
   const body=document.querySelector('body');
@@ -12,12 +12,14 @@
   const thinkImage=document.querySelector('.thinker-image');
   const showRandomNumber=document.getElementById('guessed-number');
   const btnTryAgain=document.querySelector('.retry-button');
+  const icons = document.querySelectorAll('i');
   const bodyColors = ['brown', 'red', 'blue', 'black', 'peru', 'pink', 'purple', 'palegreen', 'gray']
   const obtainedMarks=[];
 
   //set score
   marksScore.textContent=score;
   guessCaption.textContent=`Start Guessing...🤔`
+  //console.log(icons);
   console.log(randomNumber);
   //display random number to show when guess is right but do not display
 //   if(randomNumber.toString().length === 1){
@@ -93,7 +95,7 @@
             //get and check obtained marks
            obtainedMarks.push(score);
            displayText(highScore, Math.max(...obtainedMarks))
-           console.log(obtainedMarks);
+           //console.log(obtainedMarks);
 
             //logic to show how close or far input number is from the random number
         }else{
@@ -101,6 +103,9 @@
             score--;
             displayText(marksScore, score);
             body.style.backgroundColor=bodyColors[Math.trunc(Math.random() * bodyColors.length)];
+            icons.forEach((icon)=>{
+              icon.style.color = body.style.backgroundColor;
+            })
             if(score < 1){
 
                 //display message if chance is exhausted  
@@ -109,7 +114,7 @@
             score=0;
             displayText(marksScore, score)
                 //show try again button
-             btnTryAgain.style.display="block";
+             btnTryAgain.style.display="inline-block";
             }
 
         }
