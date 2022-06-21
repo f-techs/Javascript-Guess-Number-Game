@@ -79,6 +79,9 @@
 
             //change background color to draw user attention
             body.style.backgroundColor='green'
+            icons.forEach((icon)=>{
+              icon.style.color = body.style.backgroundColor;
+            })
 
             
             //highScore.textContent=score;
@@ -136,6 +139,9 @@
    console.log(randomNumber);
    btnTryAgain.style.display='none';
    body.style.backgroundColor='#0A3F8E';
+   icons.forEach((icon)=>{
+    icon.style.color = body.style.backgroundColor;
+  })
    displayText(guessCaption, `Start Guessing...🤔`)
   }
  
